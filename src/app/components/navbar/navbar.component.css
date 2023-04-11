@@ -1,0 +1,11 @@
+.navbar{
+  background-color: #272b30!important;
+  border-bottom: 1px solid rgba(28,28,28,.6);
+  text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.navbar .navbar-nav .nav-item .nav-link{
+  color: #ffffff8c !important;
+  cursor: pointer;
+}
+

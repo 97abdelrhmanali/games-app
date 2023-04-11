@@ -1,0 +1,40 @@
+<div class="container" >
+  <div class="row text-center mt-2" >
+    <div class="col-md-6 pe-0">
+      <img src="./assets/gaming.ebaf2ffc84f4451d.jpg" class="w-100" alt="">
+    </div>
+    <div class="col-md-6 ps-0" style="background-color: #2d3338!important;">
+      <div class="">
+        <h1 class="h4 text-muted my-3">Create My Account!</h1>
+      </div>
+      <form [formGroup]="registerForm" style="width: 90%;"
+      class=" m-auto border border-1 border-top-0 border-end-0 border-start-0 py-3" (ngSubmit)="register()">
+        <div class="d-flex">
+          <input formControlName="name" type="text" placeholder="Name ..." style="width: 48%;"  class="form-control me-auto">
+          <input formControlName="rePassword" type="text" placeholder="rePassword ..."style="width: 48%;"  class="ms-auto form-control">
+        </div>
+
+        <input formControlName="email" placeholder="Email ..." type="text" class="w-100 form-control my-3">
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="alert alert-danger">
+          <p *ngIf="registerForm.get('email')?.getError('required')">Email is required</p>
+          <p *ngIf="registerForm.get('email')?.getError('email')">Enter valid Email</p>
+        </div>
+        <input formControlName="phone" placeholder="phone ..." type="text" class="w-100 form-control my-3">
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="alert alert-danger">
+          <p *ngIf="registerForm.get('email')?.getError('required')">Email is required</p>
+          <p *ngIf="registerForm.get('email')?.getError('email')">Enter valid Email</p>
+        </div>
+        <input formControlName="password" placeholder="Password ..." type="text" class="w-100 form-control my-3">
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="alert alert-danger">
+          <p *ngIf="registerForm.get('password')?.getError('required')">password is required</p>
+          <p *ngIf="registerForm.get('password')?.getError('pattern')">Enter Minimum eight characters, at least one letter, one number and one special character:</p>
+        </div>
+        <button class="btn btn-dark w-100">Create Account</button>
+        <p style="color: gray; font-size: 14px;" class="mt-2">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply</p>
+      </form>
+
+      <p class="mt-2" style="color: #ffffff8c;">Already a member? <span><a class="text-primary text-decoration-none" routerLink="/login"> login</a></span> </p>
+    </div>
+  </div>
+</div>
+

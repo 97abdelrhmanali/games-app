@@ -1,0 +1,31 @@
+<div class="container" >
+  <div class="row text-center mt-2" >
+    <div class="col-md-6 pe-0">
+      <img src="./assets/gaming.ebaf2ffc84f4451d.jpg" class="w-100" alt="">
+    </div>
+    <div class="col-md-6 ps-0" style="background-color: #2d3338!important;">
+      <div class="">
+        <img src="../../../assets/logo.png" style="width: 100px;" alt="">
+        <h1 class="h4 text-muted my-3">Log in to GameOver</h1>
+      </div>
+      <form [formGroup]="loginForm"
+      class="w-75 m-auto border border-1 border-top-0 border-end-0 border-start-0 py-3" (ngSubmit)="login()">
+        <input formControlName="email" placeholder="Email ..." type="text" class="w-100 form-control my-3">
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="alert alert-danger">
+          <p *ngIf="loginForm.get('email')?.getError('required')">Email is required</p>
+          <p *ngIf="loginForm.get('email')?.getError('email')">Enter valid Email</p>
+        </div>
+        <input formControlName="password" placeholder="Password ..." type="text" class="w-100 form-control my-3">
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="alert alert-danger">
+          <p *ngIf="loginForm.get('password')?.getError('required')">password is required</p>
+          <p *ngIf="loginForm.get('password')?.getError('pattern')">Enter Minimum eight characters, at least one letter, one number and one special character:</p>
+        </div>
+        <button class="btn btn-dark w-100">Login</button>
+      </form>
+
+      <a class="text-primary text-decoration-none">Forgrt Password?</a>
+      <p style="color: #ffffff8c;">Not a member yet? <span><a class="text-primary text-decoration-none" routerLink="/register"> Create Account</a></span> </p>
+    </div>
+  </div>
+</div>
+

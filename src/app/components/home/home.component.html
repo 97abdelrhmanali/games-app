@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="container pb-5" >
+  <h2 style="color: #AAA;" class=" mb-4">Personalized Recommendations</h2>
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-4" *ngFor="let games of games">
+        <app-card [games]="games"></app-card>
+      </div>
+    </div>
+  </div>
+</div>
+
